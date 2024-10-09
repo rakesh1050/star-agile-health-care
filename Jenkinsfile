@@ -26,7 +26,7 @@ pipeline {
     stage('Create Docker Image') {
       steps {
         echo 'This stage will Create Docker image'
-        sh 'docker build -t rakesh1050/Healthcare:1.0'
+        sh 'docker build -t rakesh1050/healthcare:1.0'
                           }
             }
     stage('Login to Dockerrhub') {
@@ -40,7 +40,7 @@ pipeline {
       stage('Docker Push-Image') {
       steps {
         echo 'This stage will push my new image to the dockerhub'
-        sh 'docker push rakesh1050/Healthcare:1.0'
+        sh 'docker push rakesh1050/healthcare:1.0'
           }
       }
     }
