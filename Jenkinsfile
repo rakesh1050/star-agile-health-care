@@ -25,13 +25,13 @@ pipeline {
             }
     stage('Create Docker Image') {
       steps {
-        echo 'This stage will Create Docker image'
+        echo 'This stage will Create a Docker image'
         sh 'docker build -t rakesh1050/healthcare:1.0'
                           }
             }
-    stage('Login to Dockerrhub') {
+    stage('Login to Dockerhub') {
       steps {
-        echo 'This stage will loginto Dockerhub'
+        echo 'This stage will login to Dockerhub '
         withCredentials([usernamePassword(credentialsId: 'Dockerlogin', passwordVariable: 'docker-pass', usernameVariable: 'docker-login')]) {
         sh 'docker login -u ${docker-login} -p ${docker-pass}'
             }
